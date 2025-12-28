@@ -1,5 +1,5 @@
-import { Field, Label, Description, InputBox, Padding } from "@/components/common/editor/EditorCommon.styles";
-import { TitleTextarea } from "@/components/common/editor/EditorCommon.styles";
+import { Field, Label, Description, InputBox, Padding } from "@/components/common/EditorCommon.styles";
+import { TitleTextarea } from "@/components/common/EditorCommon.styles";
 import { useRef } from "react";
 
 export default function EventNameField({ value, onChange }) {
