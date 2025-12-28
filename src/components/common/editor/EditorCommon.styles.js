@@ -49,6 +49,7 @@ export const BaseTextarea = styled.textarea`
   outline: none;
   resize: none;
   overflow: hidden;
+
   color: #ffffff;
   font-family: "Noto Sans KR";
   text-justify: center;
@@ -60,11 +61,12 @@ export const TitleTextarea = styled(BaseTextarea)`
 `;
 
 export const CommonTextarea = styled(BaseTextarea)`
-  min-height: 17px;
   font-size: 14px;
   font-weight: 400;
+  line-height: 16px;
+  min-height: 16px;
 `;
 
 export const Padding = styled.div`
-  padding: 10px;
+  padding: 15px;
 `;

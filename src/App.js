@@ -5,12 +5,14 @@ import { MainLayout } from "./components/layout/MainLayout";
 import TopLayout from "./components/layout/TopLayout";
 import { ContentLayout, EditorSection, PreviewSection, BoldLine } from "./components/layout/ContentLayout";
 import EventNameField from "./components/common/editor/EventNameField";
+import EventContentField from "./components/common/editor/EventContentField"
 
 import { useState } from "react";
 import EventImageField from "./components/common/editor/EventImageField";
 
 function App() {
   const [eventName, setEventName] = useState("");
+  const [eventContent, setEvenContent] = useState("");
 
   return (
     <TopLayout>
@@ -27,6 +29,11 @@ function App() {
             />
 
             <EventImageField />
+
+            <EventContentField 
+              value={eventContent}
+              onChange={setEvenContent}
+            />
           </EditorSection>
 
           <BoldLine />
