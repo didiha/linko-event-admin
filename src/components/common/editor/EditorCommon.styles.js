@@ -22,6 +22,7 @@ export const Label = styled.div`
 
 export const Description = styled.div`
   font-size: 12px;
+  font-weight: 400;
   color: #ffffff;
   padding-bottom: 20px;
 
@@ -63,7 +64,6 @@ export const TitleTextarea = styled(BaseTextarea)`
 export const CommonTextarea = styled(BaseTextarea)`
   font-size: 14px;
   font-weight: 400;
-  line-height: 16px;
   min-height: 16px;
 `;
 
