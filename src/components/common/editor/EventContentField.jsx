@@ -2,7 +2,7 @@ import { Field, Label, Description, InputBox, Padding } from "./EditorCommon.sty
 import { CommonTextarea } from "./EditorCommon.styles";
 import { useRef } from "react";
 
-export default function EventNameField({ value, onChange }) {
+export default function EventContentField({ value, onChange }) {
   const ref = useRef(null);
 
   const handleChange = (e) => {
