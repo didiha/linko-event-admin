@@ -5,14 +5,16 @@ import { MainLayout } from "./components/layout/MainLayout";
 import TopLayout from "./components/layout/TopLayout";
 import { ContentLayout, EditorSection, PreviewSection, BoldLine } from "./components/layout/ContentLayout";
 import EventNameField from "./components/common/editor/EventNameField";
-import EventContentField from "./components/common/editor/EventContentField"
+import EventImageField from "./components/common/editor/EventImageField";
+import EventContentField from "./components/common/editor/EventContentField";
+import CompetitionDateField from "./components/common/editor/CompetitionDateField";
 
 import { useState } from "react";
-import EventImageField from "./components/common/editor/EventImageField";
 
 function App() {
   const [eventName, setEventName] = useState("");
   const [eventContent, setEvenContent] = useState("");
+  const [competitionDate, setCompetitionDate] = useState("");
 
   return (
     <TopLayout>
@@ -33,6 +35,11 @@ function App() {
             <EventContentField 
               value={eventContent}
               onChange={setEvenContent}
+            />
+
+            <CompetitionDateField
+              value={competitionDate}
+              onChange={setCompetitionDate}
             />
           </EditorSection>
 
