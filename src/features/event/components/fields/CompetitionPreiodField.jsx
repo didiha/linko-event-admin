@@ -1,8 +1,8 @@
-import { Field, Label, Description, InputBox, Padding } from "./EditorCommon.styles";
-import { TitleTextarea } from "./EditorCommon.styles";
+import { Field, Label, Description, InputBox, Padding } from "@/components/common/editor/EditorCommon.styles";
+import { CommonTextarea } from "@/components/common/editor/EditorCommon.styles";
 import { useRef } from "react";
 
-export default function EventNameField({ value, onChange }) {
+export default function CompetitionPreiodField({ value, onChange }) {
   const ref = useRef(null);
 
   const handleChange = (e) => {
@@ -15,14 +15,15 @@ export default function EventNameField({ value, onChange }) {
   };
 
   return (
+    
     <Field>
-      <Label>이벤트 이름</Label>
+      <Label>대회 기간</Label>
       <Description>
-        이벤트의 브랜드를 강화할 수 있는 직관적인 이름을 선택하세요.
+        예선, 본선, 결승 등 세부 일정이 잇는 경우 상세히 기재하세요.
       </Description>
 
       <InputBox>
-        <TitleTextarea
+        <CommonTextarea
           ref={ref}
           value={value}
           onChange={handleChange}

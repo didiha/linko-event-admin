@@ -1,8 +1,8 @@
-import { Field, Label, Description, InputBox, Padding } from "./EditorCommon.styles";
-import { CommonTextarea } from "./EditorCommon.styles";
+import { Field, Label, Description, InputBox, Padding } from "@/components/common/editor/EditorCommon.styles";
+import { TitleTextarea } from "@/components/common/editor/EditorCommon.styles";
 import { useRef } from "react";
 
-export default function EventContentField({ value, onChange }) {
+export default function EventNameField({ value, onChange }) {
   const ref = useRef(null);
 
   const handleChange = (e) => {
@@ -15,15 +15,14 @@ export default function EventContentField({ value, onChange }) {
   };
 
   return (
-    
     <Field>
-      <Label>이벤트 내용</Label>
+      <Label>이벤트 이름</Label>
       <Description>
-        이벤트의 특장점과 차별점을 강조하여 더 많은 관심을 유도하세요.
+        이벤트의 브랜드를 강화할 수 있는 직관적인 이름을 선택하세요.
       </Description>
 
       <InputBox>
-        <CommonTextarea
+        <TitleTextarea
           ref={ref}
           value={value}
           onChange={handleChange}

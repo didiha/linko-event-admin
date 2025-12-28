@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Field, Label, Description, LabelRow, Padding } from "./EditorCommon.styles";
+import { Field, Label, Description, LabelRow, Padding } from "@/components/common/editor/EditorCommon.styles";
 import { ImageBox, ImageUploadArea, Line, HiddenFileInput, UploadPlaceholder } from "./EventImageField.style";
 
 export default function EventImageField () {
