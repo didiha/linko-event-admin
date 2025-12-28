@@ -2,7 +2,7 @@ import { Field, Label, Description, InputBox, Padding } from "./EditorCommon.sty
 import { CommonTextarea } from "./EditorCommon.styles";
 import { useRef } from "react";
 
-export default function CompetitionDateField({ value, onChange }) {
+export default function CompetitionPreiodField({ value, onChange }) {
   const ref = useRef(null);
 
   const handleChange = (e) => {

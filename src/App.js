@@ -7,7 +7,7 @@ import { ContentLayout, EditorSection, PreviewSection, BoldLine } from "./compon
 import EventNameField from "./components/common/editor/EventNameField";
 import EventImageField from "./components/common/editor/EventImageField";
 import EventContentField from "./components/common/editor/EventContentField";
-import CompetitionDateField from "./components/common/editor/CompetitionDateField";
+import CompetitionPreiodField from "./components/common/editor/CompetitionPreiodField";
 
 import { useState } from "react";
 
@@ -37,10 +37,10 @@ function App() {
               onChange={setEvenContent}
             />
 
-            <CompetitionDateField
+            <CompetitionPreiodField
               value={competitionDate}
               onChange={setCompetitionDate}
-            />
+            /> 
           </EditorSection>
 
           <BoldLine />
