@@ -1,7 +1,7 @@
 import { RegistrationPeriodWrap, RegistrationPeriodSection, PeriodLabel, DateBox, CalendarIconWrap, TimeBox, Tilde } from "./RegistrationPeriodField.styles";
 import { Field, Label, Description, Padding } from "@/components/common/EditorCommon.styles";
 import CalendarStrokeIcon from "@/components/icons/CalendarStrokeIcon";
-import EventDateRangeModal from "../EventDateRangeModal";
+import EventDateRangeModal from "../../EventDateRangeModal";
 import { formatDate } from "@/features/event/utils/dateUtils";
 import { useState } from "react";
 

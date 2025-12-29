@@ -4,16 +4,17 @@ import Sidebar from "@/components/layout/Sidebar";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ContentWrapper, ContentLayout, EditorSection, PreviewSection, BoldLine } from "@/components/layout/ContentLayout";
 
-import EventNameField from "../components/fields/EventNameField";
-import EventImageField from "../components/fields/EventImageField";
-import EventContentField from "../components/fields/EventContentField";
-import CompetitionPreiodField from "../components/fields/CompetitionPreiodField";
-import RegistrationPeriodField from "../components/fields/RegistrationPeriodField";
-import CompetitionLocationField from "../components/fields/CompetitionLocationField";
-import CompetitionOrganizerField from "../components/fields/CompetitionOrganizerField"
-import CompetitionSponsorField from "../components/fields/CompetitionSponsorField";
-import CompetitionGiftField from "../components/fields/CompetitionGiftField";
+import EventNameField from "../components/fields/editor/EventNameField";
+import EventImageField from "../components/fields/editor/EventImageField";
+import EventContentField from "../components/fields/editor/EventContentField";
+import CompetitionPreiodField from "../components/fields/editor/CompetitionPreiodField";
+import RegistrationPeriodField from "../components/fields/editor/RegistrationPeriodField";
+import CompetitionLocationField from "../components/fields/editor/CompetitionLocationField";
+import CompetitionOrganizerField from "../components/fields/editor/CompetitionOrganizerField"
+import CompetitionSponsorField from "../components/fields/editor/CompetitionSponsorField";
+import CompetitionGiftField from "../components/fields/editor/CompetitionGiftField";
 import { ActionBar, ActionButton } from "../components/ActionBar";
+import EventPreview from "@/features/event/components/fields/preview/EventPreview"
 
 export default function EventCreatePage() {
   const [form, setForm] = useState({
@@ -116,7 +117,7 @@ export default function EventCreatePage() {
           <BoldLine />
 
           <PreviewSection>
-            {form.eventName || "이벤트 이름 미리보기"}
+            <EventPreview form={form} />
           </PreviewSection>
         </ContentLayout>
       </ContentWrapper>
