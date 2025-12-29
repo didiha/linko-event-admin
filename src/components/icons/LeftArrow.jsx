@@ -1,0 +1,9 @@
+export default function LeftArrow({
+  size = 24,
+}) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8.57812 16.3594L13.1719 11.7656L8.57812 7.17188L9.98438 5.76562L15.9844 11.7656L9.98438 17.7656L8.57812 16.3594Z" fill="black"/>
+    </svg>
+  )
+};

@@ -6,6 +6,7 @@ import EventNameField from "../components/fields/EventNameField";
 import EventImageField from "../components/fields/EventImageField";
 import EventContentField from "../components/fields/EventContentField";
 import CompetitionPreiodField from "../components/fields/CompetitionPreiodField";
+import RegistrationPeriodField from "../components/fields/RegistrationPeriodField";
 
 import { useState } from "react";
 
@@ -21,15 +22,20 @@ export default function EventCreatePage() {
       <ContentLayout>
         <EditorSection>
           <EventNameField value={eventName} onChange={setEventName} />
+
           <EventImageField />
+
           <EventContentField
             value={eventContent}
             onChange={setEventContent}
           />
+
           <CompetitionPreiodField
             value={competitionDate}
             onChange={setCompetitionDate}
           />
+
+          <RegistrationPeriodField />
         </EditorSection>
 
         <BoldLine />

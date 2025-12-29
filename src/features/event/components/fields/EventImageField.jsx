@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Field, Label, Description, LabelRow, Padding } from "@/components/common/EditorCommon.styles";
-import { ImageBox, ImageUploadArea, Line, HiddenFileInput, UploadPlaceholder } from "./EventImageField.style";
+import { ImageBox, ImageUploadArea, Line, HiddenFileInput, UploadPlaceholder } from "./EventImageField.styles";
 
 export default function EventImageField () {
   const squareInputRef = useRef(null);
