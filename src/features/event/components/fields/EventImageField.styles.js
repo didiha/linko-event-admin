@@ -7,10 +7,27 @@ export const ImageUploadArea = styled.div`
 `;
 
 export const ImageBox = styled.div`
-  width: ${({ aspect }) =>
-    aspect === "square" ? "200px" : "343px"};
-  height: ${({ aspect }) => 
-    aspect === "square" ? "200px" : "148px"};
+  width: ${({ aspect }) => {
+    switch (aspect) {
+      case "square":
+        return "200px";
+      case "portrait":
+        return "411px";
+      case "width":
+        return "343px";
+    }
+  }};
+
+  height: ${({ aspect }) => {
+    switch (aspect) {
+      case "square":
+        return "200px";
+      case "portrait":
+        return "514px";
+      default:
+        return "148px";
+    }
+  }};
 
   background: rgba(255, 255, 255, 0.1);
   border: 2px dashed #919191;
