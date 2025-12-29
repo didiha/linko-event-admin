@@ -5,11 +5,13 @@ import EventDateRangeModal from "../../EventDateRangeModal";
 import { formatDate } from "@/features/event/utils/dateUtils";
 import { useState } from "react";
 
-export default function RegistrationPeriodField({ editable }) {
+export default function RegistrationPeriodField({
+  editable,
+  startDate,
+  endDate,
+  onChange,
+}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
 
   const openModal = () => {
     if (!editable) return;
@@ -75,8 +77,7 @@ export default function RegistrationPeriodField({ editable }) {
         onConfirm={({ startDate, endDate }) => {
           if (!editable) return;
 
-          setStartDate(startDate);
-          setEndDate(endDate);
+          onChange({ startDate, endDate });
           setIsModalOpen(false);
         }}
       />

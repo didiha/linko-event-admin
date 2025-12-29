@@ -4,6 +4,7 @@ import TitleField from "./TitleField";
 import EventContentTab from "./EventContentTab";
 import EventContentField from "../preview/EventContentField";
 import CompetitionPreiodField from "./CompetitionPreiodField";
+import RegistrationPeriodField from "./RegistrationPeriodField";
 
 export default function EventPreviewPresenter({ form }) {
   return (
@@ -40,7 +41,14 @@ export default function EventPreviewPresenter({ form }) {
 
       <CompetitionPreiodField description={form.competitionDate} />
 
-      
+      <RegistrationPeriodField
+        startDate={form.registrationStartDate}
+        endDate={form.registrationEndDate}
+      />
+
+
+
+
       {/*
       <EventContent content={form.eventContent} />
       <CompetitionDate date={form.competitionDate} />

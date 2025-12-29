@@ -26,6 +26,8 @@ export default function EventCreatePage() {
     competitionSponsor: "",
     competitionGift: "",
     quareImage: null,
+    registrationStartDate: null,
+    registrationEndDate: null,
   });
 
   const handleChange = (key) => (value) => {
@@ -90,8 +92,17 @@ export default function EventCreatePage() {
               editable={isEditMode}
             />
 
-            <RegistrationPeriodField 
+            <RegistrationPeriodField
               editable={isEditMode}
+              startDate={form.registrationStartDate}
+              endDate={form.registrationEndDate}
+              onChange={({ startDate, endDate }) => {
+                setForm((prev) => ({
+                  ...prev,
+                  registrationStartDate: startDate,
+                  registrationEndDate: endDate,
+                }));
+              }}
             />
 
             <CompetitionLocationField
