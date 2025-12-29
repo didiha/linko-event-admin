@@ -9,11 +9,23 @@ import EventContentField from "../components/fields/EventContentField";
 import CompetitionPreiodField from "../components/fields/CompetitionPreiodField";
 import RegistrationPeriodField from "../components/fields/RegistrationPeriodField";
 import CompetitionLocationField from "../components/fields/CompetitionLocationField";
+import CompetitionOrganizerField from "../components/fields/CompetitionOrganizerField"
 
 export default function EventCreatePage() {
-  const [eventName, setEventName] = useState("");
-  const [eventContent, setEventContent] = useState("");
-  const [competitionDate, setCompetitionDate] = useState("");
+  const [form, setForm] = useState({
+    eventName: "",
+    eventContent: "",
+    competitionDate: "",
+    competitionLocation: "",
+    competitionOrganizerField: "",
+  });
+
+  const handleChange = (key) => (value) => {
+    setForm((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
 
   return (
     <MainLayout>
@@ -21,29 +33,40 @@ export default function EventCreatePage() {
 
       <ContentLayout>
         <EditorSection>
-          <EventNameField value={eventName} onChange={setEventName} />
+          <EventNameField
+            value={form.eventName}
+            onChange={handleChange("eventName")}
+          />
 
           <EventImageField />
 
           <EventContentField
-            value={eventContent}
-            onChange={setEventContent}
+            value={form.eventContent}
+            onChange={handleChange("eventContent")}
           />
 
           <CompetitionPreiodField
-            value={competitionDate}
-            onChange={setCompetitionDate}
+            value={form.competitionDate}
+            onChange={handleChange("competitionDate")}
           />
 
           <RegistrationPeriodField />
 
-          <CompetitionLocationField />
+          <CompetitionLocationField
+            value={form.competitionLocation}
+            onChange={handleChange("competitionLocation")}
+          />
+
+          <CompetitionOrganizerField 
+            value={form.competitionOrganizerField}
+            onChange={handleChange("competitionOrganizerField")}
+          />
         </EditorSection>
 
         <BoldLine />
 
         <PreviewSection>
-          {eventName || "이벤트 이름 미리보기"}
+          {form.eventName || "이벤트 이름 미리보기"}
         </PreviewSection>
       </ContentLayout>
     </MainLayout>
