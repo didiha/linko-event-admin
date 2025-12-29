@@ -22,7 +22,7 @@ export default function EventCreatePage() {
     eventContent: "",
     competitionDate: "",
     competitionLocation: "",
-    competitionOrganizerField: "",
+    competitionOrganizer: "",
     competitionSponsor: "",
     competitionGift: "",
     quareImage: null,
@@ -113,7 +113,7 @@ export default function EventCreatePage() {
 
             <CompetitionOrganizerField 
               value={form.competitionOrganizerField}
-              onChange={handleChange("competitionOrganizerField")}
+              onChange={handleChange("competitionOrganizer")}
               editable={isEditMode}
             />
 
