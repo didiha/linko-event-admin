@@ -10,11 +10,11 @@ import {
 import {
   ImageUploadArea,
   Line,
-} from "./EventImageField.styles";
+} from "@/components/common/EventImageField.styles";
 
 import ImageUploadBox from "@/components/common/ImageUploadBox";
 
-export default function EventImageField() {
+export default function EventImageField({ editable }) {
   const [squareImage, setSquareImage] = useState(null);
   const [wideImage, setWideImage] = useState(null);
 
@@ -36,6 +36,7 @@ export default function EventImageField() {
           aspect="square"
           image={squareImage}
           setImage={setSquareImage}
+          editable={editable}
           placeholder={
             <>
               드래그하거나 클릭하여 사진을 업로드 하세요.
@@ -51,6 +52,7 @@ export default function EventImageField() {
           aspect="wide"
           image={wideImage}
           setImage={setWideImage}
+          editable={editable}
           placeholder={
             <>
               드래그하거나 클릭하여 사진을 업로드 하세요.

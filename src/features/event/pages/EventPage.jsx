@@ -65,40 +65,51 @@ export default function EventCreatePage() {
             <EventNameField
               value={form.eventName}
               onChange={handleChange("eventName")}
+              editable={isEditMode}
             />
 
-            <EventImageField />
+            <EventImageField 
+              editable={isEditMode}
+            />
 
             <EventContentField
               value={form.eventContent}
               onChange={handleChange("eventContent")}
+              editable={isEditMode}
             />
 
             <CompetitionPreiodField
               value={form.competitionDate}
               onChange={handleChange("competitionDate")}
+              editable={isEditMode}
             />
 
-            <RegistrationPeriodField />
+            <RegistrationPeriodField 
+              editable={isEditMode}
+            />
 
             <CompetitionLocationField
               value={form.competitionLocation}
               onChange={handleChange("competitionLocation")}
+              editable={isEditMode}
             />
 
             <CompetitionOrganizerField 
               value={form.competitionOrganizerField}
               onChange={handleChange("competitionOrganizerField")}
+              editable={isEditMode}
             />
 
             <CompetitionSponsorField
               value={form.competitionSponsor}
               onChange={handleChange("competitionSponsor")}
+              editable={isEditMode}
             />
 
             <CompetitionGiftField 
               value={form.competitionGift}
               onChange={handleChange("competitionGift")}
+              editable={isEditMode}
             />
           </EditorSection>
 

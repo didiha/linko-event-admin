@@ -2,10 +2,11 @@ import { Field, Label, Description, InputBox, Padding } from "@/components/commo
 import { TitleTextarea } from "@/components/common/EditorCommon.styles";
 import { useRef } from "react";
 
-export default function EventNameField({ value, onChange }) {
+export default function EventNameField({ value, onChange, editable }) {
   const ref = useRef(null);
 
   const handleChange = (e) => {
+    if (!editable) return;
     onChange(e.target.value);
 
     if (!ref.current) return;
@@ -21,12 +22,22 @@ export default function EventNameField({ value, onChange }) {
         이벤트의 브랜드를 강화할 수 있는 직관적인 이름을 선택하세요.
       </Description>
 
-      <InputBox>
+      <InputBox
+        readOnly={!editable}
+        style={{
+          cursor: editable ? "text" : "default",
+          opacity: editable ? 1 : 0.6,
+        }}
+      >
         <TitleTextarea
           ref={ref}
           value={value}
           onChange={handleChange}
           rows={1}
+          readOnly={!editable}
+          style={{
+            pointerEvents: editable ? "auto" : "none",
+          }}
         />
       </InputBox>
 

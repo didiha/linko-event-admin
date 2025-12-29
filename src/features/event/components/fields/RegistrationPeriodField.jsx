@@ -5,12 +5,16 @@ import EventDateRangeModal from "../EventDateRangeModal";
 import { formatDate } from "@/features/event/utils/dateUtils";
 import { useState } from "react";
 
-export default function RegistrationPeriodField() {
+export default function RegistrationPeriodField({ editable }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  const openModal = () => {
+    if (!editable) return;
+    setIsModalOpen(true);
+  };
 
   return (
     <Field>
@@ -24,7 +28,13 @@ export default function RegistrationPeriodField() {
         <RegistrationPeriodSection>
           <PeriodLabel>시작일</PeriodLabel>
 
-          <DateBox onClick={() => setIsModalOpen(true)}>
+          <DateBox onClick={openModal}
+            style={{
+              cursor: editable ? "text" : "default",
+              opacity: editable ? 1 : 0.6,
+              pointerEvents: editable ? "auto" : "none",
+            }}
+          >
             <span>{startDate ? formatDate(startDate) : "날짜 선택"}</span>
             <CalendarIconWrap>
               <CalendarStrokeIcon />
@@ -40,7 +50,13 @@ export default function RegistrationPeriodField() {
         <RegistrationPeriodSection>
           <PeriodLabel>종료일</PeriodLabel>
 
-          <DateBox onClick={() => setIsModalOpen(true)}>
+          <DateBox onClick={openModal}
+            style={{
+              cursor: editable ? "text" : "default",
+              opacity: editable ? 1 : 0.6,
+              pointerEvents: editable ? "auto" : "none",
+            }}
+          >
             <span>{endDate ? formatDate(endDate) : "날짜 선택"}</span>
             <CalendarIconWrap>
               <CalendarStrokeIcon />
@@ -54,9 +70,11 @@ export default function RegistrationPeriodField() {
       <Padding />
 
       <EventDateRangeModal
-        open={isModalOpen}
+        open={isModalOpen && editable}
         onClose={() => setIsModalOpen(false)}
         onConfirm={({ startDate, endDate }) => {
+          if (!editable) return;
+
           setStartDate(startDate);
           setEndDate(endDate);
           setIsModalOpen(false);

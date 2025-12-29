@@ -1,20 +1,24 @@
 import { useRef } from "react";
-import { ImageBox, HiddenFileInput, UploadPlaceholder } from "@/features/event/components/fields/EventImageField.styles";
+import { ImageBox, HiddenFileInput, UploadPlaceholder } from "@/components/common/EventImageField.styles";
 
 export default function ImageUploadBox({
   aspect,
   image,
   setImage,
   placeholder,
+  editable,
 }) {
   const inputRef = useRef(null);
 
   const handleClick = () => {
+    if (!editable) return;
     inputRef.current?.click();
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
+    if (!editable) return;
+
     const file = e.dataTransfer.files[0];
     if (!file) return;
 
@@ -23,6 +27,7 @@ export default function ImageUploadBox({
   };
 
   const handleFileChange = (e) => {
+    if (!editable) return;
     const file = e.target.files[0];
     if (!file) return;
 
@@ -36,6 +41,11 @@ export default function ImageUploadBox({
       onClick={handleClick}
       onDragOver={(e) => e.preventDefault()}
       onDrop={handleDrop}
+      style={{
+        cursor: editable ? "pointer" : "default",
+        opacity: editable ? 1 : 0.6,
+        pointerEvents: editable ? "auto" : "none",
+      }}
     >
       {image ? (
         <img
