@@ -1,7 +1,8 @@
+import { useState } from "react";
+
 import Sidebar from "@/components/layout/Sidebar";
 import { MainLayout } from "@/components/layout/MainLayout";
-import { ContentLayout, EditorSection, PreviewSection, BoldLine } from "@/components/layout/ContentLayout";
-import { useState } from "react";
+import { ContentWrapper, ContentLayout, EditorSection, PreviewSection, BoldLine } from "@/components/layout/ContentLayout";
 
 import EventNameField from "../components/fields/EventNameField";
 import EventImageField from "../components/fields/EventImageField";
@@ -12,6 +13,7 @@ import CompetitionLocationField from "../components/fields/CompetitionLocationFi
 import CompetitionOrganizerField from "../components/fields/CompetitionOrganizerField"
 import CompetitionSponsorField from "../components/fields/CompetitionSponsorField";
 import CompetitionGiftField from "../components/fields/CompetitionGiftField";
+import { ActionBar, ActionButton } from "../components/ActionBar";
 
 export default function EventCreatePage() {
   const [form, setForm] = useState({
@@ -31,58 +33,82 @@ export default function EventCreatePage() {
     }));
   };
 
+  const [isEditMode, setIsEditMode] = useState(false);
+
+  const handleEdit = () => {
+    setIsEditMode(true);
+  };
+
+  const handleSave = () => {
+    console.log("save", form);
+    setIsEditMode(false);
+  };
+
   return (
     <MainLayout>
       <Sidebar />
+      <ContentWrapper>
+        <ActionBar>
+          {isEditMode ? (
+            <ActionButton variant="save" onClick={handleSave}>
+              저장하기
+            </ActionButton>
+          ) : (
+            <ActionButton variant="edit" onClick={handleEdit}>
+              수정하기
+            </ActionButton>
+          )}
+        </ActionBar>
 
-      <ContentLayout>
-        <EditorSection>
-          <EventNameField
-            value={form.eventName}
-            onChange={handleChange("eventName")}
-          />
+        <ContentLayout>
+          <EditorSection>
+            <EventNameField
+              value={form.eventName}
+              onChange={handleChange("eventName")}
+            />
 
-          <EventImageField />
+            <EventImageField />
 
-          <EventContentField
-            value={form.eventContent}
-            onChange={handleChange("eventContent")}
-          />
+            <EventContentField
+              value={form.eventContent}
+              onChange={handleChange("eventContent")}
+            />
 
-          <CompetitionPreiodField
-            value={form.competitionDate}
-            onChange={handleChange("competitionDate")}
-          />
+            <CompetitionPreiodField
+              value={form.competitionDate}
+              onChange={handleChange("competitionDate")}
+            />
 
-          <RegistrationPeriodField />
+            <RegistrationPeriodField />
 
-          <CompetitionLocationField
-            value={form.competitionLocation}
-            onChange={handleChange("competitionLocation")}
-          />
+            <CompetitionLocationField
+              value={form.competitionLocation}
+              onChange={handleChange("competitionLocation")}
+            />
 
-          <CompetitionOrganizerField 
-            value={form.competitionOrganizerField}
-            onChange={handleChange("competitionOrganizerField")}
-          />
+            <CompetitionOrganizerField 
+              value={form.competitionOrganizerField}
+              onChange={handleChange("competitionOrganizerField")}
+            />
 
-          <CompetitionSponsorField
-            value={form.competitionSponsor}
-            onChange={handleChange("competitionSponsor")}
-          />
+            <CompetitionSponsorField
+              value={form.competitionSponsor}
+              onChange={handleChange("competitionSponsor")}
+            />
 
-          <CompetitionGiftField 
-            value={form.competitionGift}
-            onChange={handleChange("competitionGift")}
-          />
-        </EditorSection>
+            <CompetitionGiftField 
+              value={form.competitionGift}
+              onChange={handleChange("competitionGift")}
+            />
+          </EditorSection>
 
-        <BoldLine />
+          <BoldLine />
 
-        <PreviewSection>
-          {form.eventName || "이벤트 이름 미리보기"}
-        </PreviewSection>
-      </ContentLayout>
+          <PreviewSection>
+            {form.eventName || "이벤트 이름 미리보기"}
+          </PreviewSection>
+        </ContentLayout>
+      </ContentWrapper>
     </MainLayout>
   );
 }

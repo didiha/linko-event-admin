@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
+export const ContentWrapper = styled.div`
+  display: flex;
+  padding: 10px 20px 10px 20px;
+  flex-direction: column;
+  flex: 1;
+`;
+
 export const ContentLayout = styled.div`
   display: flex;
   flex: 1;
-  padding: 10px 20px 10px 20px;
   gap: 10px;
 `;
 
