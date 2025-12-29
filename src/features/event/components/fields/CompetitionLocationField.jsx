@@ -1,5 +1,4 @@
-import { Field, Label, Description, InputBox, Padding } from "@/components/common/EditorCommon.styles";
-import { CommonTextarea } from "@/components/common/EditorCommon.styles";
+import { Field, Label, Description, InputBox, CommonTextarea, Padding } from "@/components/common/EditorCommon.styles";
 import { useRef } from "react";
 
 export default function CompetitionLocationField({ value, onChange }) {
