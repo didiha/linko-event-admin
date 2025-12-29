@@ -4,7 +4,7 @@ export default function CompetitionPreiodField({ description }) {
 return (
     <LabDesWrap>
       <Label>대회 기간</Label>
-      <Description>{description}</Description>
+      <Description>{description || "대회 기간이 설정되지 않았습니다."}</Description>
       <Padding />
     </LabDesWrap>
   );
