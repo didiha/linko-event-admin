@@ -5,6 +5,7 @@ import EventContentTab from "./EventContentTab";
 import EventContentField from "../preview/EventContentField";
 import CompetitionPreiodField from "./CompetitionPreiodField";
 import RegistrationPeriodField from "./RegistrationPeriodField";
+import PreCompetitionLocationField from "./PreCompetitionLocationField";
 
 export default function EventPreviewPresenter({ form }) {
   return (
@@ -46,7 +47,7 @@ export default function EventPreviewPresenter({ form }) {
         endDate={form.registrationEndDate}
       />
 
-
+      <PreCompetitionLocationField description={form.competitionLocation} />
 
 
       {/*
