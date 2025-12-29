@@ -1,6 +1,6 @@
 import { Label, Description, LabDesWrap, Padding } from "@/components/common/PreviewCommon.styles";
 
-export default function CompetitionPreiodField({ description }) {
+export default function PreCompetitionPreiodField({ description }) {
 return (
     <LabDesWrap>
       <Label>대회 기간</Label>

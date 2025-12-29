@@ -1,10 +1,10 @@
 import { HeaderPadding } from "@/components/common/PreviewCommon.styles";
 import HeaderField from "./HeaderField"
-import TitleField from "./TitleField";
+import PreEventNameField from "./PreEventNameField";
 import EventContentTab from "./EventContentTab";
-import EventContentField from "../preview/EventContentField";
-import CompetitionPreiodField from "./CompetitionPreiodField";
-import RegistrationPeriodField from "./RegistrationPeriodField";
+import PreEventContentField from "./PreEventContentField";
+import PreCompetitionPreiodField from "./PreCompetitionPreiodField";
+import PreRegistrationPeriodField from "./PreRegistrationPeriodField";
 import PreCompetitionLocationField from "./PreCompetitionLocationField";
 
 export default function EventPreviewPresenter({ form }) {
@@ -14,7 +14,7 @@ export default function EventPreviewPresenter({ form }) {
 
       <HeaderPadding />
 
-      <TitleField title={form.eventName} />
+      <PreEventNameField title={form.eventName} />
 
       <div
         style={{
@@ -38,11 +38,11 @@ export default function EventPreviewPresenter({ form }) {
 
       <EventContentTab />
 
-      <EventContentField description={form.eventContent} />
+      <PreEventContentField description={form.eventContent} />
 
-      <CompetitionPreiodField description={form.competitionDate} />
+      <PreCompetitionPreiodField description={form.competitionDate} />
 
-      <RegistrationPeriodField
+      <PreRegistrationPeriodField
         startDate={form.registrationStartDate}
         endDate={form.registrationEndDate}
       />

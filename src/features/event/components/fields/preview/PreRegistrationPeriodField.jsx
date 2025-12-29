@@ -1,6 +1,6 @@
 import { Label, Description, LabDesWrap, Padding } from "@/components/common/PreviewCommon.styles";
 
-function formatRegistrationPeriod(startDate, endDate) {
+function formatPreRegistrationPeriod(startDate, endDate) {
   if (!startDate || !endDate) return "";
 
   const pad = (n) => String(n).padStart(2, "0");
@@ -18,11 +18,11 @@ function formatRegistrationPeriod(startDate, endDate) {
   )}(23:59)까지`;
 }
 
-export default function RegistrationPeriodField({
+export default function PreRegistrationPeriodField({
   startDate,
   endDate,
 }) {
-  const text = formatRegistrationPeriod(startDate, endDate);
+  const text = formatPreRegistrationPeriod(startDate, endDate);
 
   return (
     <LabDesWrap>

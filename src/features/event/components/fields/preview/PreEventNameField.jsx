@@ -1,6 +1,6 @@
 import { TitleWrap, TitleText } from "./TitleField.styles";
 
-export default function TitleField({ title }) {
+export default function PreEventNameField({ title }) {
   return (
     <TitleWrap>
         <TitleText>{ title }</TitleText>
