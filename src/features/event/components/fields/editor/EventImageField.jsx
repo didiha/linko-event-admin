@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Field,
   Label,
@@ -14,10 +13,13 @@ import {
 
 import ImageUploadBox from "@/components/common/ImageUploadBox";
 
-export default function EventImageField({ editable }) {
-  const [squareImage, setSquareImage] = useState(null);
-  const [wideImage, setWideImage] = useState(null);
-
+export default function EventImageField({
+  editable,
+  squareImage,
+  setSquareImage,
+  wideImage,
+  setWideImage,
+}) {
   return (
     <Field>
       <LabelRow>

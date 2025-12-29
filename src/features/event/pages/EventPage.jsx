@@ -25,6 +25,7 @@ export default function EventCreatePage() {
     competitionOrganizerField: "",
     competitionSponsor: "",
     competitionGift: "",
+    quareImage: null,
   });
 
   const handleChange = (key) => (value) => {
@@ -69,8 +70,12 @@ export default function EventCreatePage() {
               editable={isEditMode}
             />
 
-            <EventImageField 
+            <EventImageField
               editable={isEditMode}
+              squareImage={form.squareImage}
+              setSquareImage={handleChange("squareImage")}
+              wideImage={form.wideImage}
+              setWideImage={handleChange("wideImage")}
             />
 
             <EventContentField

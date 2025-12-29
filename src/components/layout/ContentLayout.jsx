@@ -32,10 +32,9 @@ export const PreviewSection = styled.div`
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  align-items: center;
   width: 411px;
 
-  background: #f9f9f9;
+  background: #ffffff;
   border-radius: 20px;
   border: none;
 `
