@@ -2,7 +2,7 @@ import { Field, Label, Description, InputBox, Padding } from "@/components/commo
 import { CommonTextarea } from "@/components/common/EditorCommon.styles";
 import { useRef } from "react";
 
-export default function CompetitionVenueField({ value, onChange }) {
+export default function CompetitionLocationField({ value, onChange }) {
   const ref = useRef(null);
 
   const handleChange = (e) => {

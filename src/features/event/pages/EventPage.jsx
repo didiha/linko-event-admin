@@ -8,7 +8,7 @@ import EventImageField from "../components/fields/EventImageField";
 import EventContentField from "../components/fields/EventContentField";
 import CompetitionPreiodField from "../components/fields/CompetitionPreiodField";
 import RegistrationPeriodField from "../components/fields/RegistrationPeriodField";
-import CompetitionVenueField from "../components/fields/CompetitionVenueField";
+import CompetitionLocationField from "../components/fields/CompetitionLocationField";
 
 export default function EventCreatePage() {
   const [eventName, setEventName] = useState("");
@@ -37,7 +37,7 @@ export default function EventCreatePage() {
 
           <RegistrationPeriodField />
 
-          <CompetitionVenueField />
+          <CompetitionLocationField />
         </EditorSection>
 
         <BoldLine />
