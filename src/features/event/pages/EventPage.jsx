@@ -10,6 +10,7 @@ import CompetitionPreiodField from "../components/fields/CompetitionPreiodField"
 import RegistrationPeriodField from "../components/fields/RegistrationPeriodField";
 import CompetitionLocationField from "../components/fields/CompetitionLocationField";
 import CompetitionOrganizerField from "../components/fields/CompetitionOrganizerField"
+import CompetitionSponsorField from "../components/fields/CompetitionSponsorField";
 
 export default function EventCreatePage() {
   const [form, setForm] = useState({
@@ -18,6 +19,7 @@ export default function EventCreatePage() {
     competitionDate: "",
     competitionLocation: "",
     competitionOrganizerField: "",
+    competitionSponsor: "",
   });
 
   const handleChange = (key) => (value) => {
@@ -60,6 +62,11 @@ export default function EventCreatePage() {
           <CompetitionOrganizerField 
             value={form.competitionOrganizerField}
             onChange={handleChange("competitionOrganizerField")}
+          />
+
+          <CompetitionSponsorField
+            value={form.competitionSponsor}
+            onChange={handleChange("competitionSponsor")}
           />
         </EditorSection>
 
