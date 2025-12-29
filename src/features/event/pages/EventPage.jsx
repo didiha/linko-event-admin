@@ -1,14 +1,14 @@
 import Sidebar from "@/components/layout/Sidebar";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ContentLayout, EditorSection, PreviewSection, BoldLine } from "@/components/layout/ContentLayout";
+import { useState } from "react";
 
 import EventNameField from "../components/fields/EventNameField";
 import EventImageField from "../components/fields/EventImageField";
 import EventContentField from "../components/fields/EventContentField";
 import CompetitionPreiodField from "../components/fields/CompetitionPreiodField";
 import RegistrationPeriodField from "../components/fields/RegistrationPeriodField";
-
-import { useState } from "react";
+import CompetitionVenueField from "../components/fields/CompetitionVenueField";
 
 export default function EventCreatePage() {
   const [eventName, setEventName] = useState("");
@@ -36,6 +36,8 @@ export default function EventCreatePage() {
           />
 
           <RegistrationPeriodField />
+
+          <CompetitionVenueField />
         </EditorSection>
 
         <BoldLine />

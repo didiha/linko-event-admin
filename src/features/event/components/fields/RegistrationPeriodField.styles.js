@@ -4,6 +4,7 @@ import { InputBox } from "@/components/common/EditorCommon.styles";
 export const RegistrationPeriodWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 `;
 
 export const RegistrationPeriodSection = styled.div`
