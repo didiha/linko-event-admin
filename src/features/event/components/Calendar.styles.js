@@ -54,6 +54,7 @@ export const WeekRow = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const Week = styled.div`
@@ -79,6 +80,7 @@ export const DayCell = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Poppins", sans-serif;
 
   cursor: ${({ disabled }) => (disabled ? "default" : "pointer")};
   pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
