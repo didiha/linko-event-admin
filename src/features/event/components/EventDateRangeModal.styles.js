@@ -109,3 +109,16 @@ export const ConfirmButton = styled.button`
     cursor: not-allowed;
   }
 `;
+
+export const LineWrapper = styled.div`
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+`;
+
+export const Line = styled.div`
+  width: 100%;
+  height: 1px;
+  background: #ececec;
+  border-radius: 10px;
+`;

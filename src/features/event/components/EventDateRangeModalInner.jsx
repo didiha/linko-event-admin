@@ -22,6 +22,8 @@ import {
   Footer,
   CancelButton,
   ConfirmButton,
+  Line,
+  LineWrapper,
 } from "./EventDateRangeModal.styles";
 
 function EventDateRangeModalInner({
@@ -109,6 +111,10 @@ function EventDateRangeModalInner({
             onSelectDate={handleSelectDate}
           />
         </Content>
+
+        <LineWrapper>
+          <Line />
+        </LineWrapper>
 
         <Footer>
           <CancelButton onClick={onClose}>취소</CancelButton>
