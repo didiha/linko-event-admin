@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+📌 Event Admin Page (Frontend)
+🧩 프로젝트 개요
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+이 프로젝트는 이벤트(대회) 생성 및 관리용 어드민 페이지를 구현하는 프론트엔드 과제입니다.
+디자인 시안(Figma)을 기반으로 실제 운영 환경을 고려한 관리자 UI/UX를 목표로 개발하고 있습니다.
 
-## Available Scripts
+🛠️ 기술 스택
+Frontend
 
-In the project directory, you can run:
+React: 18.x
 
-### `npm start`
+Create React App (CRA)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+styled-components
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+JavaScript (ES6+)
 
-### `npm test`
+Runtime
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Node.js: 18.x (LTS)
 
-### `npm run build`
+❓ CRA(Create React App)를 사용한 이유
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+이번 프로젝트는 빌드 설정이나 프레임워크 구조보다는 UI 구현과 컴포넌트 설계에 집중하는 것이 목적이었기 때문에 CRA를 선택했습니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+초기 설정 없이 바로 개발을 시작할 수 있음
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Webpack, Babel 등의 설정을 직접 다루지 않아도 됨
 
-### `npm run eject`
+과제 성격상 빠른 구현과 안정성이 중요
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React 기본 구조를 가장 명확하게 보여줄 수 있음
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+👉 즉, 학습 목적 + 과제 목적에 가장 적합한 선택이라고 판단했습니다.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+📂 프로젝트 구조 (요약)
+src/
+ ├─ components/        # 공통 UI 컴포넌트
+ ├─ features/          # 이벤트 생성 관련 도메인 단위 기능
+ │   └─ event/
+ │      ├─ components/
+ │      ├─ pages/
+ │      └─ styles/
+ ├─ assets/            # 이미지, 아이콘
+ └─ App.jsx
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+✅ 현재까지 구현한 기능
+1. 레이아웃 구성
 
-## Learn More
+사이드바 + 메인 콘텐츠 구조
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+관리자 페이지에 적합한 고정 레이아웃 설계
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Flex 기반 반응형 정렬
 
-### Code Splitting
+2. 이벤트 생성 페이지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+이벤트명 입력
 
-### Analyzing the Bundle Size
+이벤트 설명(Textarea 자동 높이 조절)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+대회 기간 / 신청 기간 필드
 
-### Making a Progressive Web App
+대회 장소, 주관사, 후원사 입력
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+참가 공통 기념품 입력 및 이미지 업로드 영역
 
-### Advanced Configuration
+3. UI/UX 디테일
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Figma 디자인 기반 픽셀 단위 맞춤 구현
 
-### Deployment
+버튼 활성/비활성 상태 처리
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+hover / focus 상태 스타일링
 
-### `npm run build` fails to minify
+textarea 자동 리사이즈 처리
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+styled-components를 활용한 재사용 가능한 UI 컴포넌트 설계
+
+🎯 작업 방향성
+
+디자인 시안과 최대한 동일한 결과물 구현
+
+실제 관리자 사용성을 고려한 인터랙션 설계
+
+컴포넌트 단위 분리로 유지보수성 확보
+
+🔜 향후 예정 작업
+
+폼 데이터 상태 관리 정리
+
+API 연동 (이벤트 등록 / 수정)
+
+유효성 검사 및 에러 처리
+
+공통 컴포넌트 추가 리팩토링
