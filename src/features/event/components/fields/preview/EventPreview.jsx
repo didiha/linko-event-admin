@@ -8,6 +8,7 @@ import PreRegistrationPeriodField from "./PreRegistrationPeriodField";
 import PreCompetitionLocationField from "./PreCompetitionLocationField";
 import PreCompetitionOrganizerField from "./PreCompetitionOrganizerField"
 import PreCompetitionSponsorField from "./PreCompetitionSponsorField"
+import PreCompetitionGiftField from "./PreCompetitionGiftField"
 
 export default function EventPreviewPresenter({ form }) {
   return (
@@ -54,6 +55,9 @@ export default function EventPreviewPresenter({ form }) {
       <PreCompetitionOrganizerField description={form.competitionOrganizer} />
 
       <PreCompetitionSponsorField description={form.competitionSponsor} />
+
+      <PreCompetitionGiftField image={form.giftImage} />
+
     </div>
   );
 }

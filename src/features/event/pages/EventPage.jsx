@@ -28,6 +28,7 @@ export default function EventCreatePage() {
     quareImage: null,
     registrationStartDate: null,
     registrationEndDate: null,
+    giftImage: null,
   });
 
   const handleChange = (key) => (value) => {
@@ -123,10 +124,12 @@ export default function EventCreatePage() {
               editable={isEditMode}
             />
 
-            <CompetitionGiftField 
+            <CompetitionGiftField
               value={form.competitionGift}
               onChange={handleChange("competitionGift")}
               editable={isEditMode}
+              giftImage={form.giftImage}
+              setGiftImage={handleChange("giftImage")}
             />
           </EditorSection>
 
