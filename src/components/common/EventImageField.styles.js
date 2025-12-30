@@ -30,8 +30,11 @@ export const ImageBox = styled.div`
   }};
 
   background: rgba(255, 255, 255, 0.1);
-  border: 2px dashed #919191;
-  border-radius: 5px;
+  border: ${({ hasImage }) =>
+    hasImage ? "none" : "2px dashed #919191"};
+
+  border-radius: ${({ hasImage }) =>
+    hasImage ? "0" : "5px"};
 
   display: flex;
   align-items: center;
@@ -54,6 +57,7 @@ export const Line = styled.div`
   height: 180px;
   background: #ffffff;
   border-radius: 10px;
+  margin: 24px 0;
 `;
 
 export const HiddenFileInput = styled.input`

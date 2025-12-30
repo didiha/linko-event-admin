@@ -38,6 +38,7 @@ export default function ImageUploadBox({
   return (
     <ImageBox
       aspect={aspect}
+      hasImage={!!image}
       onClick={handleClick}
       onDragOver={(e) => e.preventDefault()}
       onDrop={handleDrop}
