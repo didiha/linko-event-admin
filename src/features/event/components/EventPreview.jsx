@@ -1,17 +1,17 @@
 import { HeaderPadding } from "@/components/common/PreviewCommon.styles";
-import HeaderField from "./HeaderField"
-import PreEventNameField from "./PreEventNameField";
-import EventContentTab from "./EventContentTab";
-import PreEventContentField from "./PreEventContentField";
-import PreCompetitionPreiodField from "./PreCompetitionPreiodField";
-import PreRegistrationPeriodField from "./PreRegistrationPeriodField";
-import PreCompetitionLocationField from "./PreCompetitionLocationField";
-import PreCompetitionOrganizerField from "./PreCompetitionOrganizerField"
-import PreCompetitionSponsorField from "./PreCompetitionSponsorField"
-import PreCompetitionGiftField from "./PreCompetitionGiftField"
-import DivisionSettingPreview from "./DivisionSettingPreview"
+import HeaderField from "./fields/preview/HeaderField"
+import PreEventNameField from "./fields/preview/PreEventNameField";
+import EventContentTab from "./fields/preview/EventContentTab";
+import PreEventContentField from "./fields/preview/PreEventContentField";
+import PreCompetitionPreiodField from "./fields/preview/PreCompetitionPreiodField";
+import PreRegistrationPeriodField from "./fields/preview/PreRegistrationPeriodField";
+import PreCompetitionLocationField from "./fields/preview/PreCompetitionLocationField";
+import PreCompetitionOrganizerField from "./fields/preview/PreCompetitionOrganizerField"
+import PreCompetitionSponsorField from "./fields/preview/PreCompetitionSponsorField"
+import PreCompetitionGiftField from "./fields/preview/PreCompetitionGiftField"
+import DivisionSettingPreview from "./fields/preview/DivisionSettingPreview"
 import { BigPadding } from "@/components/common/PreviewCommon.styles";
-import ApplyButton from "./ApplyButton";
+import ApplyButton from "./fields/preview/ApplyButton";
 
 export default function EventPreviewPresenter({ form }) {
   return (

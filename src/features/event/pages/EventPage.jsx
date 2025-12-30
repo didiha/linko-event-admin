@@ -4,17 +4,9 @@ import Sidebar from "@/components/layout/Sidebar";
 import { MainLayout } from "@/components/layout/MainLayout";
 import { ContentWrapper, ContentLayout, EditorSection, PreviewSection, BoldLine } from "@/components/layout/ContentLayout";
 
-import EventNameField from "../components/fields/editor/EventNameField";
-import EventImageField from "../components/fields/editor/EventImageField";
-import EventContentField from "../components/fields/editor/EventContentField";
-import CompetitionPreiodField from "../components/fields/editor/CompetitionPreiodField";
-import RegistrationPeriodField from "../components/fields/editor/RegistrationPeriodField";
-import CompetitionLocationField from "../components/fields/editor/CompetitionLocationField";
-import CompetitionOrganizerField from "../components/fields/editor/CompetitionOrganizerField"
-import CompetitionSponsorField from "../components/fields/editor/CompetitionSponsorField";
-import CompetitionGiftField from "../components/fields/editor/CompetitionGiftField";
 import { ActionBar, ActionButton } from "../components/ActionBar";
-import EventPreview from "@/features/event/components/fields/preview/EventPreview"
+import EventPreview from "@/features/event/components/EventPreview"
+import EventEditor from "@/features/event/components/EventEditor";
 
 export default function EventCreatePage() {
   const [form, setForm] = useState({
@@ -67,69 +59,17 @@ export default function EventCreatePage() {
 
         <ContentLayout>
           <EditorSection>
-            <EventNameField
-              value={form.eventName}
-              onChange={handleChange("eventName")}
+            <EventEditor
+              form={form}
               editable={isEditMode}
-            />
-
-            <EventImageField
-              editable={isEditMode}
-              squareImage={form.squareImage}
-              setSquareImage={handleChange("squareImage")}
-              wideImage={form.wideImage}
-              setWideImage={handleChange("wideImage")}
-            />
-
-            <EventContentField
-              value={form.eventContent}
-              onChange={handleChange("eventContent")}
-              editable={isEditMode}
-            />
-
-            <CompetitionPreiodField
-              value={form.competitionDate}
-              onChange={handleChange("competitionDate")}
-              editable={isEditMode}
-            />
-
-            <RegistrationPeriodField
-              editable={isEditMode}
-              startDate={form.registrationStartDate}
-              endDate={form.registrationEndDate}
-              onChange={({ startDate, endDate }) => {
+              onChange={handleChange}
+              onChangeRegistrationPeriod={({ startDate, endDate }) => {
                 setForm((prev) => ({
                   ...prev,
                   registrationStartDate: startDate,
                   registrationEndDate: endDate,
                 }));
               }}
-            />
-
-            <CompetitionLocationField
-              value={form.competitionLocation}
-              onChange={handleChange("competitionLocation")}
-              editable={isEditMode}
-            />
-
-            <CompetitionOrganizerField 
-              value={form.competitionOrganizerField}
-              onChange={handleChange("competitionOrganizer")}
-              editable={isEditMode}
-            />
-
-            <CompetitionSponsorField
-              value={form.competitionSponsor}
-              onChange={handleChange("competitionSponsor")}
-              editable={isEditMode}
-            />
-
-            <CompetitionGiftField
-              value={form.competitionGift}
-              onChange={handleChange("competitionGift")}
-              editable={isEditMode}
-              giftImage={form.giftImage}
-              setGiftImage={handleChange("giftImage")}
             />
           </EditorSection>
 
