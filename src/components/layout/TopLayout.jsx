@@ -6,6 +6,7 @@ const PageBackground = styled.div`
   background: #000000;
   display: flex;
   justify-content: center;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 /* 맥북 14인치 기준 컨테이너 */
