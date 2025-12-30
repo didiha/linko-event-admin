@@ -11,6 +11,8 @@ export const ContentLayout = styled.div`
   display: flex;
   flex: 1;
   gap: 10px;
+
+  align-items: flex-start; 
 `;
 
 export const EditorSection = styled.div`
@@ -33,6 +35,7 @@ export const PreviewSection = styled.div`
   flex-direction: column;
   flex-shrink: 0;
   width: 411px;
+  align-self: flex-start;
 
   background: #ffffff;
   border-radius: 20px;
@@ -47,6 +50,7 @@ export const BoldLineWrap = styled.div`
 
 export const BoldLine = styled.div`
   width: 3px;
+  align-self: stretch; 
   background: #ffffff;
   border-radius: 10px;
   margin: 10px 0;

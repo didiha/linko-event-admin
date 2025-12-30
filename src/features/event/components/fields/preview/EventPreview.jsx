@@ -9,6 +9,9 @@ import PreCompetitionLocationField from "./PreCompetitionLocationField";
 import PreCompetitionOrganizerField from "./PreCompetitionOrganizerField"
 import PreCompetitionSponsorField from "./PreCompetitionSponsorField"
 import PreCompetitionGiftField from "./PreCompetitionGiftField"
+import DivisionSettingPreview from "./DivisionSettingPreview"
+import { BigPadding } from "@/components/common/PreviewCommon.styles";
+import ApplyButton from "./ApplyButton";
 
 export default function EventPreviewPresenter({ form }) {
   return (
@@ -58,6 +61,17 @@ export default function EventPreviewPresenter({ form }) {
 
       <PreCompetitionGiftField image={form.giftImage} />
 
+      <DivisionSettingPreview
+        title="Team league"
+        eligibilityDetail="고등학생 이상"
+        restriction="제한 없음"
+        fee="10,000 KRW"
+        location="Online"
+      />
+
+      <BigPadding />
+
+      <ApplyButton />
     </div>
   );
 }

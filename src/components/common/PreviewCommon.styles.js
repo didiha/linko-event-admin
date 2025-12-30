@@ -7,6 +7,13 @@ export const Padding = styled.div`
   background-color: #f9f9f9;
 `;
 
+export const BigPadding = styled.div`
+  width: 100%;
+  padding-bottom: 120px;
+
+  background-color: #f9f9f9;
+`;
+
 export const HeaderPadding = styled.div`
   width: 100%;
   padding: 15px;
