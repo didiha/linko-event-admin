@@ -50,6 +50,9 @@ src/
  │      └─ utils/
  └─ App.jsx
 
+```
+---
+
 ## ✅ 현재까지 구현한 기능
 
 ### 1. 레이아웃 구성
@@ -70,7 +73,6 @@ src/
 - hover / focus 상태 스타일링
 - textarea 자동 리사이즈 처리
 - styled-components를 활용한 재사용 가능한 UI 컴포넌트 설계
-
 ---
 
 ## 🎯 작업 방향성
