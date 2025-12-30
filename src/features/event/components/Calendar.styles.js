@@ -89,8 +89,8 @@ export const DayCell = styled.div`
 export const RangeBg = styled.div`
   position: absolute;
 
-  left: ${({ isStart }) => (isStart ? "50%" : "-90%")};
-  right: ${({ isEnd }) => (isEnd ? "50%" : "-90%")};
+  left: ${({ isStart }) => (isStart ? "10%" : "-90%")};
+  right: ${({ isEnd }) => (isEnd ? "10%" : "-90%")};
 
   top: 50%;
   transform: translateY(-50%);
@@ -115,15 +115,27 @@ export const DayCircle = styled.div`
   justify-content: center;
 
   font-size: 14px;
-  font-weight: 600;
 
-  color: ${({ selected, disabled }) =>
-    disabled ? "#ccc" : selected ? "#fff" : "#111"};
+  font-weight: ${({ selected, muted }) =>
+    selected ? 500 : muted ? 400 : 500};
 
-  background: ${({ selected }) => (selected ? "#6DD49E" : "transparent")};
+  color: ${({ selected, muted, disabled }) => {
+    if (selected) return "#fff";
+    if (disabled && muted) return "#777777";
+    if (disabled) return "#ccc";
+    return "#111";
+  }};
+
+  background: ${({ selected }) =>
+    selected ? "#6DD49E" : "transparent"};
 
   &:hover {
-    background: ${({ selected, disabled }) =>
-      disabled ? "transparent" : selected ? "#6DD49E" : "#f2f2f2"};
+    background: ${({ selected, disabled, muted }) =>
+      selected
+        ? "#6DD49E"
+        : disabled || muted
+        ? "transparent"
+        : "#f2f2f2"};
   }
 `;
+

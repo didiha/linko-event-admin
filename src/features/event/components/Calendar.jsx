@@ -32,29 +32,47 @@ function getMonthMatrix(year, month) {
   const firstDay = new Date(year, month, 1);
   const startDay = firstDay.getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const prevMonthDays = new Date(year, month, 0).getDate();
 
   const matrix = [];
   let week = [];
 
-  for (let i = 0; i < startDay; i++) week.push(null);
+  // 이전 달 날짜 채우기
+  for (let i = startDay - 1; i >= 0; i--) {
+    week.push({
+      date: new Date(year, month - 1, prevMonthDays - i),
+      type: "prev",
+    });
+  }
 
+  // 현재 달
   for (let day = 1; day <= daysInMonth; day++) {
-    week.push(new Date(year, month, day));
+    week.push({
+      date: new Date(year, month, day),
+      type: "current",
+    });
+
     if (week.length === 7) {
       matrix.push(week);
       week = [];
     }
   }
 
+  // 다음 달 날짜 채우기
+  let nextDay = 1;
   if (week.length) {
-    while (week.length < 7) week.push(null);
+    while (week.length < 7) {
+      week.push({
+        date: new Date(year, month + 1, nextDay++),
+        type: "next",
+      });
+    }
     matrix.push(week);
   }
 
   return matrix;
 }
 
-/* ---------- component ---------- */
 export default function Calendar({ startDate, endDate, onSelectDate, initialMonth }) {
   const [current, setCurrent] = useState(initialMonth ?? startDate ?? new Date());
 
@@ -112,46 +130,49 @@ export default function Calendar({ startDate, endDate, onSelectDate, initialMont
 
       {/* Grid */}
       <Grid>
-        {matrix.map((week, wi) =>
-          week.map((date, di) => {
-            if (!date) return <Empty key={`${wi}-${di}`} />;
+      {matrix.map((week, wi) =>
+        week.map(({ date, type }, di) => {
+          const isCurrentMonth = type === "current";
 
-            const isStart = isSameDay(date, startDate);
-            const isEnd = isSameDay(date, endDate);
-            const inRange = isInRange(date, startDate, endDate);
-            const disabled = isBeforeToday(date);
-            const isWeekStart = di === 0;
-            const isWeekEnd = di === 6;
+          const isStart = isSameDay(date, startDate);
+          const isEnd = isSameDay(date, endDate);
+          const inRange = isInRange(date, startDate, endDate);
 
-            return (
-              <DayCell
-                key={date.toISOString()}
-                disabled={disabled}
-                onClick={() => {
+          const disabled =
+            !isCurrentMonth || isBeforeToday(date);
+
+          const isWeekStart = di === 0;
+          const isWeekEnd = di === 6;
+
+          return (
+            <DayCell
+              key={date.toISOString()}
+              disabled={disabled}
+              muted={!isCurrentMonth}
+              onClick={() => {
                 if (disabled) return;
                 onSelectDate(date);
-                }}
-              >
-                {/* 회색 range 배경 */}
-                {(inRange || isStart || isEnd) && (
-                  <RangeBg
-                    isStart={isStart || isWeekStart}
-                    isEnd={isEnd || isWeekEnd}
-                  />
-                )}
+              }}
+            >
+              {(inRange || isStart || isEnd) && (
+                <RangeBg
+                  isStart={isStart || isWeekStart}
+                  isEnd={isEnd || isWeekEnd}
+                />
+              )}
 
-                {/* 날짜 원 */}
-                <DayCircle
-                  selected={isStart || isEnd}
-                  disabled={disabled}
-                  >
-                  {date.getDate()}
-                </DayCircle>
-              </DayCell>
-            );
-          })
-        )}
-      </Grid>
+              <DayCircle
+                selected={isStart || isEnd}
+                disabled={disabled}
+                muted={!isCurrentMonth}
+              >
+                {date.getDate()}
+              </DayCircle>
+            </DayCell>
+          );
+        })
+      )}
+    </Grid>
     </Wrapper>
   );
 }

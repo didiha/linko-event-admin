@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const ModalContainer = styled.div`
   width: 1002px;
-  height: 632px;
 
   background: #ffffff;
   box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.1);
